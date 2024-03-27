@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>ROADMANN</title>    
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/dasboard.css">
+    <link rel="stylesheet" type="text/css" href="plugins/apexcharts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <script src="js/jquery-3.6.3.min.js" type="text/javascript"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="plugins/apexcharts/apexcharts.min.js" type="text/javascript"></script>
+    <script src="js/dash-chart.js" type="text/javascript"></script>
+    <script src="js/function.js" type="text/javascript"></script>
+</head>
+<body class="main-site">
+    <div class="page-body-wrapper">
+        <div class="sidebar-wrapper">
+            <div class="user-account-info">
+                <div class="user-account-media">
+                    <img src="images/user-profile.png">
+                </div>
+                <div class="user-account-content">
+                    <h2>Godwin Asuquo</h2>
+                    <p>asqgod@gmail.com</p>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <h2>Menu</h2>
+                    <ul class="nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">
+                                <span class="menu-icon dash-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none"> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.125 4.10417C1.125 2.24464 1.14491 1.625 3.60417 1.625C6.06342 1.625 6.08333 2.24464 6.08333 4.10417C6.08333 5.96369 6.09118 6.58333 3.60417 6.58333C1.11716 6.58333 1.125 5.96369 1.125 4.10417Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M8.9165 4.10417C8.9165 2.24464 8.93641 1.625 11.3957 1.625C13.8549 1.625 13.8748 2.24464 13.8748 4.10417C13.8748 5.96369 13.8827 6.58333 11.3957 6.58333C8.90866 6.58333 8.9165 5.96369 8.9165 4.10417Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.125 11.8952C1.125 10.0357 1.14491 9.41602 3.60417 9.41602C6.06342 9.41602 6.08333 10.0357 6.08333 11.8952C6.08333 13.7547 6.09118 14.3743 3.60417 14.3743C1.11716 14.3743 1.125 13.7547 1.125 11.8952Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M8.9165 11.8952C8.9165 10.0357 8.93641 9.41602 11.3957 9.41602C13.8549 9.41602 13.8748 10.0357 13.8748 11.8952C13.8748 13.7547 13.8827 14.3743 11.3957 14.3743C8.90866 14.3743 8.9165 13.7547 8.9165 11.8952Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </svg></span> 
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="myorders.html">
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none"> <rect x="0.75" y="0.75" width="16.5" height="18.5" rx="4.25" stroke="white" stroke-width="1.5"/> <path d="M5.31982 5.90039H8.31982" stroke="white" stroke-width="1.5" stroke-linecap="round"/> <path d="M5.31982 9.90039H12.3198" stroke="white" stroke-width="1.5" stroke-linecap="round"/> <path d="M5.31982 13.9004H12.3198" stroke="white" stroke-width="1.5" stroke-linecap="round"/> </svg> 
+                                </span> 
+                                <span class="menu-title">Orders</span>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item ">
+                            <a class="nav-link" href="myproducts-list.html">
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5139 20.5003H6.16604C3.09968 20.5003 0.747274 19.3927 1.41547 14.9351L2.1935 8.89387C2.6054 6.66962 4.02416 5.81836 5.26901 5.81836H15.4475C16.7107 5.81836 18.047 6.73369 18.523 8.89387L19.3011 14.9351C19.8686 18.8893 17.5802 20.5003 14.5139 20.5003Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14.6512 5.59775C14.6512 3.21168 12.7169 1.27738 10.3309 1.27738V1.27738C9.18186 1.27251 8.07825 1.72554 7.26406 2.5363C6.44987 3.34705 5.99218 4.44874 5.99219 5.59775H5.99219" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.2965 10.1002H13.2507" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.4659 10.1002H7.42013" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span class="menu-title">Product</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="support.html">
+                                <span class="menu-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="27" height="24" viewBox="0 0 27 24" fill="none"> <path d="M21.3319 9.64373V10.2842L21.9644 10.3845C23.8501 10.6835 25.2771 12.3172 25.2771 14.2738C25.2771 16.4322 23.5061 18.2089 21.3148 18.209L20.8257 18.2091L20.6285 18.6567C19.7231 20.7122 17.7187 22.1979 15.3585 22.3196L14.7463 22.3511L14.6554 22.9574C14.6305 23.1237 14.4927 23.25 14.3014 23.25H11.8358C11.6316 23.25 11.4624 23.0772 11.4624 22.8767V21.6163C11.4624 21.4122 11.6352 21.243 11.8358 21.243H14.3014C14.4828 21.243 14.6284 21.3678 14.665 21.5324L14.8062 22.1683L15.4556 22.1175C17.4554 21.9612 19.1516 20.8638 20.1236 19.2333L20.5893 18.452L19.7335 18.1437C19.3463 18.0042 19.0787 17.6292 19.0787 17.2054L19.0785 11.3151C19.0785 10.7587 19.4984 10.3271 20.0484 10.3114L20.777 10.2906V9.56168V8.98625C20.777 4.73648 17.3179 1.27746 13.0682 1.27746C8.81846 1.27746 5.35944 4.73659 5.35944 8.98625V9.58898V10.2512L6.01651 10.3332C6.53144 10.3975 6.92116 10.83 6.92116 11.3424V17.2327C6.92116 17.7851 6.48224 18.2361 5.91776 18.2361H4.71225C2.52382 18.2361 0.75 16.4623 0.75 14.2738C0.75 12.272 2.24646 10.6132 4.17961 10.3599L4.83217 10.2744V9.61623V8.98615C4.83217 4.44451 8.54814 0.75 13.0957 0.75C17.6403 0.75 21.3319 4.44155 21.3319 8.98615V9.64373ZM5.64384 17.6813H6.39384V16.9313V11.6163V10.8663H5.64384H4.7124C2.84621 10.8663 1.30491 12.4076 1.30491 14.2738C1.30491 16.135 2.81384 17.6813 4.7124 17.6813H5.64384ZM19.6334 16.9313V17.6813H20.3834H21.3148C23.2136 17.6813 24.7223 16.135 24.7223 14.2738C24.7223 12.4127 23.2134 10.8663 21.3148 10.8663H20.3834H19.6334V11.6163V16.9313Z"  stroke="white" stroke-width="1.5"/> </svg> 
+                                </span> 
+                                <span class="menu-title">Support</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="vendor-profile.html">
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20" fill="none"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.98493 13.3457C4.11731 13.3457 0.814453 13.9305 0.814453 16.2724C0.814453 18.6143 4.09636 19.22 7.98493 19.22C11.8525 19.22 15.1545 18.6343 15.1545 16.2933C15.1545 13.9524 11.8735 13.3457 7.98493 13.3457Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.98489 10.0059C10.523 10.0059 12.5801 7.94779 12.5801 5.40969C12.5801 2.8716 10.523 0.814453 7.98489 0.814453C5.44679 0.814453 3.3887 2.8716 3.3887 5.40969C3.38013 7.93922 5.42394 9.99731 7.95251 10.0059H7.98489Z" stroke="white" stroke-width="1.42857" stroke-linecap="round" stroke-linejoin="round"/> </svg> </span>
+                                <span class="menu-title">Profile</span>
+                            </a>
+                        </li>
+
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <div class="sidebar-logout-item">
+                    <a href="login.html">
+                        <span class="menu-icon"><img src="images/logout.svg"></span>
+                        <span class="menu-title">logout</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="body-wrapper">
+            <div class="overview-info">
+                <div class="intro-text">
+                    <h2>Hello, Green foods</h2>
+                    <p>Welcome to your dashboard</p>
+                </div>
+                <div class="notifications-info">
+                    <a class="notifications-btn" href="notifications.html"><img src="images/notifications.svg"></a>
+                </div>
+            </div>
+
+            <div class="new-orders-section">
+                <div class="new-orders-media"><img src="images/orders-bl.svg"></div>
+                <div class="new-orders-text"><h4>You have 4 new orders</h4></div>
+                <div class="new-orders-action"><a href=""><i class="las la-angle-right"></i></a></div> 
+            </div>
+
+
+            <div class="setup-overview-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="setup-chart-info">
+                            <div class="setup-chart-card">
+                                <div id="accountsetup"></div>
+                            </div>
+                            <div class="setup-chart-content">
+                                <h3>Kindly complete your account set up</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="setup-link-list">
+                            <div class="setup-link-item">
+                                <div class="setup-link-item-media"><img src="images/store.svg"></div>
+                                <div class="setup-link-item-text">
+                                    <h4>Store details</h4>
+                                    <p>Request a pick up</p>
+                                </div>
+                                <div class="setup-link-item-action"><a href=""><i class="las la-angle-right"></i></a></div> 
+                            </div> 
+
+                            <div class="setup-link-item">
+                                <div class="setup-link-item-media"><img src="images/product-1.svg"></div>
+                                <div class="setup-link-item-text">
+                                    <h4>Add products</h4>
+                                    <p>Request a pick up</p>
+                                </div>
+                                <div class="setup-link-item-action"><a href=""><i class="las la-angle-right"></i></a></div> 
+                            </div>
+
+                            <div class="setup-link-item">
+                                <div class="setup-link-item-media"><img src="images/Wallet.svg"></div>
+                                <div class="setup-link-item-text">
+                                    <h4>Payments option</h4>
+                                    <p>Request a pick up</p>
+                                </div>
+                                <div class="setup-link-item-action"><a href=""><i class="las la-angle-right"></i></a></div> 
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="viewreports-overview-section">
+                <div class="viewreports-overview-head">
+                    <div class="viewreports-overview-heading">
+                        <h3>View reports <img src="images/Chart.svg"></h3>
+                    </div>
+                    <div class="search-filter wd20">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Today</option>
+                                        <option>Weekly</option>
+                                        <option>Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="viewreports-overview-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="viewreports-card gr-card">
+                                <h2>Sales <img src="images/sale.svg"></h2>
+                                <div class="viewreports-value">100k</div>
+                                <div class="viewreports-text">Total revenue</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="viewreports-card pi-card">
+                                <h2>Orders <img src="images/orders-pi.svg"></h2>
+                                <div class="viewreports-value">34</div>
+                                <div class="viewreports-text">Total no of request</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="viewreports-card bl-card">
+                                <h2>Total Product <img src="images/product-bl.svg"></h2>
+                                <div class="viewreports-value">20</div>
+                                <div class="viewreports-text">No of available product</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="viewreports-card re-card">
+                                <h2>Cancelled order <img src="images/product-re.svg"></h2>
+                                <div class="viewreports-value">30</div>
+                                <div class="viewreports-text">No of rejected request</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="salesanalytics-chart-section">
+                <div class="salesanalytics-chart-head">
+                    <div class="salesanalytics-chart-heading">
+                        <h3>Sales analytics </h3>
+                    </div>
+                    <div class="search-filter wd20">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Today</option>
+                                        <option>Weekly</option>
+                                        <option>Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="salesanalytics-chart-body">
+                    <div id="salesanalytics"></div>
+                </div>
+            </div>
+
+
+            <div class="Product-section">
+               <div class="row">
+                   <div class="col-md-6">
+                       <div class="selling-product-section">
+                            <div class="selling-product-head">
+                                <div class="selling-product-heading">
+                                    <h3>Top selling Product</h3>
+                                </div>
+                                <div class="search-filter">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <a class="seeall-btn" href="">See all <i class="las la-angle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="selling-product-chart-body">
+                                <div class="data-table-info">
+                                    <table class="table sellingproduct-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Amount sold</th>
+                                                <th>Order stats</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4>Afang</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4 class="text-center">N 85,000</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct">
+                                                        <div id="prodduct1" class="prodductitem"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4>Black soup</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4 class="text-center">N 45,000</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct">
+                                                        <div id="prodduct2" class="prodductitem"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4>Ewedu</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4 class="text-center">N 32,000</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct">
+                                                        <div id="prodduct3" class="prodductitem"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4>Goat soup</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4 class="text-center">N 35,000</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct">
+                                                        <div id="prodduct4" class="prodductitem"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4>Egusi</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct-text">
+                                                        <h4 class="text-center">N 12,000</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="sellingproduct">
+                                                        <div id="prodduct5" class="prodductitem"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div class="col-md-6">
+                       <div class="productlist-section">
+                            <div class="productlist-head">
+                                <div class="productlist-heading">
+                                    <h3>Top selling Product</h3>
+                                </div>
+                                <div class="search-filter">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <a class="seeall-btn" href="">See all <i class="las la-angle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productlist-body">
+                                <div class="data-table-info">
+                                    <table class="table productlist-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Amount</th>
+                                                <th>Enable/Disable</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="productlist-box">
+                                                        <div class="productlist-imges">
+                                                            <img src="images/1.png">
+                                                        </div>
+                                                        <div class="productlist-text">
+                                                            <h4 >Afang</h4>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="productlist-text">
+                                                        <h4 class="text-center">N 85,000</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="switch-toggle">
+                                                        <div class="">
+                                                            <label class="toggle" for="section1">
+                                                                <input class="toggle__input" name="" type="checkbox" id="section1" checked="">
+                                                                <div class="toggle__fill"></div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="action-btn-info">
+                                                        <a class="action-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="las la-ellipsis-v"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu">
+                                                            <a href="users-details.html" class="dropdown-item">
+                                                                <img src="images/EditSquare.svg"> Edit
+                                                            </a>
+                                                            
+                                                            <a href="#" class="dropdown-item">
+                                                               <img src="images/delete.svg"> Delete
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="productlist-box">
+                                                        <div class="productlist-imges">
+                                                            <img src="images/1.png">
+                                                        </div>
+                                                        <div class="productlist-text">
+                                                            <h4 >Afang</h4>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="productlist-text">
+                                                        <h4 class="text-center">N 85,000</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="switch-toggle">
+                                                        <div class="">
+                                                            <label class="toggle" for="product1">
+                                                                <input class="toggle__input" name="" type="checkbox" id="product1" >
+                                                                <div class="toggle__fill"></div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="action-btn-info">
+                                                        <a class="action-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="las la-ellipsis-v"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu">
+                                                            <a href="users-details.html" class="dropdown-item">
+                                                                <img src="images/EditSquare.svg"> Edit
+                                                            </a>
+                                                            
+                                                            <a data-bs-toggle="modal" data-bs-target="#deleteproduct" class="dropdown-item">
+                                                               <img src="images/delete.svg"> Delete
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="productlist-box">
+                                                        <div class="productlist-imges">
+                                                            <img src="images/1.png">
+                                                        </div>
+                                                        <div class="productlist-text">
+                                                            <h4 >Afang</h4>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="productlist-text">
+                                                        <h4 class="text-center">N 85,000</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="switch-toggle">
+                                                        <div class="">
+                                                            <label class="toggle" for="product2">
+                                                                <input class="toggle__input" name="" type="checkbox" id="product2" >
+                                                                <div class="toggle__fill"></div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="action-btn-info">
+                                                        <a class="action-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="las la-ellipsis-v"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu">
+                                                            <a href="users-details.html" class="dropdown-item">
+                                                                <img src="images/EditSquare.svg"> Edit
+                                                            </a>
+                                                            
+                                                           <a data-bs-toggle="modal" data-bs-target="#deleteproduct" class="dropdown-item">
+                                                               <img src="images/delete.svg"> Delete
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="productlist-box">
+                                                        <div class="productlist-imges">
+                                                            <img src="images/1.png">
+                                                        </div>
+                                                        <div class="productlist-text">
+                                                            <h4 >Afang</h4>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="productlist-text">
+                                                        <h4 class="text-center">N 85,000</h4>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="switch-toggle">
+                                                        <div class="">
+                                                            <label class="toggle" for="product3">
+                                                                <input class="toggle__input" name="" type="checkbox" id="product3" >
+                                                                <div class="toggle__fill"></div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="action-btn-info">
+                                                        <a class="action-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="las la-ellipsis-v"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu">
+                                                            <a href="users-details.html" class="dropdown-item">
+                                                                <img src="images/EditSquare.svg"> Edit
+                                                            </a>
+                                                            
+                                                            <a data-bs-toggle="modal" data-bs-target="#deleteproduct" class="dropdown-item">
+                                                               <img src="images/delete.svg"> Delete
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+               </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- delete question -->
+<div class="modal ro-modal fade" id="deleteproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="deleteproduct-form-info">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h2>Delete Product</h2>
+            <div class="deleteproduct-media">
+                <img src="images/Delete-re.svg">
+            </div>
+            <p>You are about to delete “Stew” from your product catalog. Are you sure?</p>
+            <div class="deleteproduct-action">
+                <a class="cancel-btn" href="">Cancel</a>
+                <a class="delete-btn" href="">Delete</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
